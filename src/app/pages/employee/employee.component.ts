@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { MasterService } from '../../services/master.service';
-import { IApiResponse, IChildDept, IParentDept } from '../../model/Employee';
+import { Employee, IApiResponse, IChildDept, IParentDept } from '../../model/Employee';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,8 @@ export class EmployeeComponent implements OnInit {
   parentDeptList: IParentDept[] = [];
   deptId: number = 0;
   childDeptList : IChildDept[] = [];
+
+  employeeObj : Employee = new Employee();
 
   ngOnInit(): void {
     this.getParentDeptList();
