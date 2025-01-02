@@ -1,5 +1,5 @@
-export class Employee{
-    employeeid : number;
+export class Employee {
+    employeeId: number;
     employeeName: string;
     contactNo: string;
     emailId: string;
@@ -9,12 +9,12 @@ export class Employee{
     role: string;
     createdDate: Date;
 
-    constructor(){
-        this.employeeid = 0;
+    constructor() {
+        this.employeeId = 0;
         this.employeeName = "";
         this.contactNo = "";
         this.emailId = "";
-        this.deptId =0;
+        this.deptId = 0;
         this.password = "";
         this.gender = "";
         this.role = "Employee";
@@ -22,20 +22,52 @@ export class Employee{
     }
 }
 
-export interface IParentDept{
+export interface IParentDept {
     departmentId: number;
     departmentName: string;
     departmentLogo: string;
 }
 
-export interface IChildDept{
+export interface IChildDept {
     childDeptId: number;
     parentDeptId: number;
     departmentName: string;
 }
 
-export interface IApiResponse{
-    message: string,
-    result: boolean,
-    data: any
+export interface IApiResponse {
+    message: string;
+    result: boolean;
+    data: any;
 }
+
+export interface project {
+    // empProjectId: number;
+    projectId: number,
+    projectName: string,
+    clientName: string,
+    startDate: Date,
+    leadByEmpId: number,
+    // assignedDate: string;
+    contactPerson: string,
+    contactNo: string,
+    emailId: string
+}
+
+export class projectEmployee {
+    empProjectId: number;
+    projectId: number;
+    empId: number;
+    assignedDate: string;
+    role: string;
+    isActive: boolean;
+
+    constructor(){
+        this.assignedDate = "";
+        this.empId = 0;
+        this.empProjectId = 0;
+        this.projectId = 0;
+        this.isActive = true;
+        this.role = "";
+    }
+}
+
